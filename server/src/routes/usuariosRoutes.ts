@@ -8,8 +8,8 @@ class UsuariosRoutes {
     this.config();
   }
   config(){
-    //this.router.post('/login', usuariosController.loginUser);
     this.router.post('/register', usuariosController.createUser);
+    this.router.post('/login', usuariosController.loginUser);
   }
 }
 

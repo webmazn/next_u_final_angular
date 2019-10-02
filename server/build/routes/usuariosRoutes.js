@@ -11,8 +11,8 @@ class UsuariosRoutes {
         this.config();
     }
     config() {
-        //this.router.post('/login', usuariosController.loginUser);
         this.router.post('/register', usuariosController_1.default.createUser);
+        this.router.post('/login', usuariosController_1.default.loginUser);
     }
 }
 exports.default = new UsuariosRoutes().router;
