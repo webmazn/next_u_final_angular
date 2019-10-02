@@ -10,6 +10,39 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 class ProductosController {
+    mostrarProductos(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            /*const { id } = req.params;
+            const games = await pool.query('SELECT * FROM games WHERE id = ?', [id]);
+            console.log(games.length);
+            if (games.length > 0) {
+                return res.json(games[0]);
+            }
+            res.status(404).json({ text: "The game doesn't exits" });*/
+        });
+    }
+    buscarProducto(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            /*const { id } = req.params;
+            const games = await pool.query('SELECT * FROM games WHERE id = ?', [id]);
+            console.log(games.length);
+            if (games.length > 0) {
+                return res.json(games[0]);
+            }
+            res.status(404).json({ text: "The game doesn't exits" });*/
+        });
+    }
+    actualizarDisponibles(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            /*const { id } = req.params;
+            const games = await pool.query('SELECT * FROM games WHERE id = ?', [id]);
+            console.log(games.length);
+            if (games.length > 0) {
+                return res.json(games[0]);
+            }
+            res.status(404).json({ text: "The game doesn't exits" });*/
+        });
+    }
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             /*const games = await pool.query('SELECT * FROM games');
