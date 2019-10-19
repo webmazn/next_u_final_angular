@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
 .container-fluid{
-background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
+background-image: url('/assets/loginFondo.jpg');
 background-size: cover;
 background-repeat: no-repeat;
 font-family: 'Numans', sans-serif;
@@ -84,4 +84,15 @@ margin-left: 4px;
 
 .input-group-text {
 padding: .375rem 1.1rem;
+}
+
+.invalid-feedback {
+text-align: right !important;
+font-weight: bold !important;
+}
+
+.resServer{
+color:red;
+font-size: 11px;
+font-weight: bold;
 }

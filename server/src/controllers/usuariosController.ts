@@ -69,7 +69,7 @@ class UsuariosController {
           res.status(409).send({ message: 'La clave es incorrecta' });
         }
       }else{
-        res.status(409).send({ message: 'EL correo no está registrado' });
+        res.status(409).send({ message: 'El correo no está registrado' });
       }
       //res.status(404).json({ text: "The game doesn't exits" });
     });
