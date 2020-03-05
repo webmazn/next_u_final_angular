@@ -33,9 +33,21 @@ class ProductosController {
     res.status(404).json({ text: "The game doesn't exits" });*/
   }
 
-  public async list(req: Request, res: Response): Promise<void> {
+  public async listarProductos(req: Request, res: Response): Promise<void> {
     /*const games = await pool.query('SELECT * FROM games');
     res.json(games);*/
+    const productos = await pool.query('SELECT id, nombre, precio, disponibles, imagen FROM nu_productos', [], (error, results, fields) => {
+      if (error) return res.status(500).send('Server error');
+      //console.log(results);
+      //console.log(results.length);
+      //console.log(rows.clave);
+      if (results.length > 0) {
+        res.json(results);
+      }else{
+        res.status(409).send({ message: 'No hay productos' });
+      }
+      //res.status(404).json({ text: "The game doesn't exits" });
+    });
   }
 
   public async getOne(req: Request, res: Response): Promise<any> {

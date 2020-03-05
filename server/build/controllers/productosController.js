@@ -8,7 +8,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
+const database_1 = __importDefault(require("../database"));
 class ProductosController {
     mostrarProductos(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -43,10 +47,24 @@ class ProductosController {
             res.status(404).json({ text: "The game doesn't exits" });*/
         });
     }
-    list(req, res) {
+    listarProductos(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             /*const games = await pool.query('SELECT * FROM games');
             res.json(games);*/
+            const productos = yield database_1.default.query('SELECT id, nombre, precio, disponibles, imagen FROM nu_productos', [], (error, results, fields) => {
+                if (error)
+                    return res.status(500).send('Server error');
+                //console.log(results);
+                //console.log(results.length);
+                //console.log(rows.clave);
+                if (results.length > 0) {
+                    res.json(results);
+                }
+                else {
+                    res.status(409).send({ message: 'No hay productos' });
+                }
+                //res.status(404).json({ text: "The game doesn't exits" });
+            });
         });
     }
     getOne(req, res) {

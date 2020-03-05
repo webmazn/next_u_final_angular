@@ -1,6 +1,7 @@
 import express, {Application} from 'express';
 import indexRoutes from './routes/indexRoutes';
 import usuariosRoutes from './routes/usuariosRoutes';
+import productosRoutes from './routes/productosRoutes';
 import morgan from 'morgan';
 import cors from 'cors';
 
@@ -21,6 +22,7 @@ class Server {
   routes(): void{
     this.app.use(indexRoutes);
     this.app.use(usuariosRoutes);
+    this.app.use(productosRoutes);
   }
   start(): void{
     this.app.listen(this.app.get('port'), () =>{
