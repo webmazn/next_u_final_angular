@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
 .container-fluid{
-background-image: url('/assets/loginFondo.jpg');
+background-image: url('/assets/login-fondo.jpg');
 background-size: cover;
 background-repeat: no-repeat;
 font-family: 'Numans', sans-serif;
