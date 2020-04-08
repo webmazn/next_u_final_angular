@@ -26,14 +26,14 @@ CREATE TABLE IF NOT EXISTS `nu_productos` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla nextu_final8_db.nu_productos: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla nextu_final8_db.nu_productos: ~25 rows (aproximadamente)
 /*!40000 ALTER TABLE `nu_productos` DISABLE KEYS */;
 INSERT INTO `nu_productos` (`id`, `nombre`, `precio`, `disponibles`, `imagen`) VALUES
 	(1, 'Aguacate', 5.0000, 32, 'aguacate.jpg'),
 	(2, 'Ajo', 6.0000, 23, 'ajo.jpg'),
 	(3, 'Almendras', 7.0000, 34, 'almendras.jpg'),
 	(4, 'Arandanos', 8.0000, 56, 'arandanos.jpg'),
-	(5, 'Brocoli', 9.0000, 34, 'brocoli.jpg'),
+	(5, 'Brocoli', 9.0000, 34, 'brocoli.png'),
 	(6, 'Calabaza', 10.0000, 45, 'calabaza.jpg'),
 	(7, 'Canela', 9.0000, 12, 'canela.jpg'),
 	(8, 'Cebolla', 8.0000, 43, 'cebolla.jpg'),
@@ -46,7 +46,7 @@ INSERT INTO `nu_productos` (`id`, `nombre`, `precio`, `disponibles`, `imagen`) V
 	(15, 'Naranja', 9.0000, 15, 'naranja.jpg'),
 	(16, 'Papa', 10.0000, 19, 'papa.jpg'),
 	(17, 'Pasta', 9.0000, 37, 'pasta.jpg'),
-	(18, 'Pimienta', 8.0000, 27, 'pmienta.jpg'),
+	(18, 'Pimienta', 8.0000, 27, 'pimienta.jpg'),
 	(19, 'Repollo', 7.0000, 16, 'repollo.jpg'),
 	(20, 'Tomate', 6.0000, 57, 'tomate.jpg'),
 	(21, 'Zanahoria', 5.0000, 87, 'zanahoria.jpg'),
