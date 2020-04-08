@@ -35,19 +35,23 @@
     </div>
     <div class="row">
 
-      <div class="col-3">
-        <img style="max-width:100%;" src="/assets/aguacate.jpg">
-        <h3>Aguacate</h3>
+      <div class="col-3" *ngFor="let producto of productos">
+        <div class="col-12">
+          <div class="row">
+            <img src="/assets/{{producto.imagen}}" class="img-fluid mh-105">
+          </div>
+        </div>
+        <h3>{{producto.nombre}}</h3>
         <div class="col-12">
           <div class="row">
             <div class="col-10 p-0"><small class="font-weight-bold">Precio:</small> </div>
-            <div class="col-2 p-0 "><small>$ 5</small></div>
+            <div class="col-2 p-0 "><small>$ {{producto.precio}}</small></div>
           </div>
         </div>
         <div class="col-12">
           <div class="row">
             <div class="col-10 p-0"><small class="font-weight-bold">Unidades disponibles:</small> </div>
-            <div class="col-2 p-0"><small>46</small></div>
+            <div class="col-2 p-0"><small>{{producto.disponibles}}</small></div>
           </div>
         </div>
         <div class="col-12">

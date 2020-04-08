@@ -14,3 +14,8 @@ align-content: center;
   background-color: #563d7c;
   box-shadow: 0 0.5rem 1rem rgba(0,0,0,.05), inset 0 -1px 0 rgba(0,0,0,.1);
 }
+
+.mh-105{
+  max-height: 105px;
+  margin: 0 auto;
+}
