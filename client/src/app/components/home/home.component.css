@@ -19,3 +19,7 @@ align-content: center;
   max-height: 105px;
   margin: 0 auto;
 }
+
+.modal.show{
+  display: block;
+}
