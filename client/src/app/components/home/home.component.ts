@@ -9,6 +9,7 @@ import { HomeService } from '../../services/home.service';
 export class HomeComponent implements OnInit {
 
   productos: any = [];
+  filterProducto: any = '';
 
   constructor(private homeService : HomeService) { }
 
