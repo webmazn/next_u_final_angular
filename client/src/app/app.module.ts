@@ -11,13 +11,19 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginService } from './services/login.service';
 import { HomeService } from './services/home.service';
 import { FilterPipe } from './pipes/filter.pipe';
+import { MenuComponent } from './components/menu/menu.component';
+import { ModalComponent } from './components/modal/modal.component';
+import { ProductosComponent } from './components/productos/productos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    FilterPipe
+    FilterPipe,
+    MenuComponent,
+    ModalComponent,
+    ProductosComponent
   ],
   imports: [
     BrowserModule,

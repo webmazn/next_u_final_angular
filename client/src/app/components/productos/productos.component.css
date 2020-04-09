@@ -1,0 +1,41 @@
+.h-cuerpo{
+  height: calc(100vh - 40px);
+  padding-top: 20px;
+  position: relative;
+}
+
+.h-cuerpo .row{
+  background-color: #f8f9fa;
+  position: relative;
+}
+
+.h-cuerpo-top {
+  height: 135px;
+
+}
+
+.h-cuerpo-bottom {
+  /*position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;*/
+  height: calc(100% - 135px);
+  overflow: auto;
+}
+
+.productos{
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,.05), inset 0 -1px 0 rgba(0,0,0,.1);
+}
+
+.h-cuerpo-bottom button{
+  padding: 0px 12px;
+}
+
+.mh-105{
+  max-height: 105px;
+  margin: 0 auto;
+}

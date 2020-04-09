@@ -1,0 +1,55 @@
+<div class="container h-cuerpo">
+  <div class="row py-3 h-cuerpo-top">
+    <div class="col-9">
+      <div class="h2">Catálogo de Productos</div>
+    </div>
+    <div class="col-3">
+      <form>
+        <div class="form-group">
+          <label for="exampleInputEmail1" class="h5">¿Qué estas buscando?</label>
+          <input type="text" class="form-control" name="filterProducto" placeholder="Buscar producto" [(ngModel)]="filterProducto">
+          <!--small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small-->
+        </div>
+      </form>
+    </div>
+    <div class="col-12">
+      <div class="dropdown-divider"></div>
+    </div>
+  </div>
+
+  <div class="row py-3 h-cuerpo-bottom">
+    <div class="col-3 p-3" *ngFor="let producto of productos | filter:filterProducto">
+      <div class="productos">
+        <div class="col-12">
+          <div class="row py-2 bg-white">
+            <img src="/assets/{{producto.imagen}}" class="img-fluid mh-105">
+          </div>
+        </div>
+        <h3>{{producto.nombre}}</h3>
+        <div class="col-12">
+          <div class="row">
+            <div class="col-10 p-0"><small class="font-weight-bold">Precio:</small> </div>
+            <div class="col-2 p-0 "><small>$ {{producto.precio}}</small></div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="row">
+            <div class="col-10 p-0"><small class="font-weight-bold">Unidades disponibles:</small> </div>
+            <div class="col-2 p-0"><small>{{producto.disponibles}}</small></div>
+          </div>
+        </div>
+        <div class="col-12">
+
+          <div class="row py-2">
+            <div class="btn-group">
+              <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalProducto" (click)="onModalProducto(true, producto)">Ver Más</button>
+              <button href="" class="btn btn-warning btn-sm">Añadir</button>
+              <input type="number" class="form-control form-control-sm cantidad" value="1">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

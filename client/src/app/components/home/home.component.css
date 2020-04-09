@@ -1,25 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
-.container-fluid{
+.bg-imagen{
 background-image: url('/assets/main-fondo.jpg');
 background-size: cover;
 background-repeat: no-repeat;
 font-family: 'Numans', sans-serif;
 height: 100vh;
 align-content: center;
-}
-
-.bd-navbar {
-  min-height: 4rem;
-  background-color: #563d7c;
-  box-shadow: 0 0.5rem 1rem rgba(0,0,0,.05), inset 0 -1px 0 rgba(0,0,0,.1);
-}
-
-.mh-105{
-  max-height: 105px;
-  margin: 0 auto;
-}
-
-.modal.show{
-  display: block;
 }
