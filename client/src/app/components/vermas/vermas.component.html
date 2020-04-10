@@ -1,0 +1,27 @@
+<div class="container-fluid bg-home">
+
+  <app-menu></app-menu>
+
+  <div class="container h-cuerpo">
+    <div class="row py-3 h-cuerpo-top">
+      <div class="col-12">
+        <div class="h2">{{producto.nombre}}</div>
+      </div>
+      <div class="col-12">
+        <div class="dropdown-divider"></div>
+      </div>
+    </div>
+
+    <div class="row py-3 h-cuerpo-bottom">
+      <div class="col-4 bg-white">
+          <img src="/assets/{{producto.imagen}}" class="img-fluid">
+      </div>
+      <div class="col-8">
+        <div><strong>Precio: </strong> <span>$ {{producto.precio}}</span></div>
+        <div><strong>Unidades disponible: </strong> <span> {{producto.disponibles}}</span></div>
+        <a routerLink="/home" class="btn btn-primary btn-sm" >Regresar</a>
+      </div>
+    </div>
+  </div>
+
+</div>

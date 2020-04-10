@@ -14,6 +14,7 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { MenuComponent } from './components/menu/menu.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { ProductosComponent } from './components/productos/productos.component';
+import { VermasComponent } from './components/vermas/vermas.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ProductosComponent } from './components/productos/productos.component';
     FilterPipe,
     MenuComponent,
     ModalComponent,
-    ProductosComponent
+    ProductosComponent,
+    VermasComponent
   ],
   imports: [
     BrowserModule,

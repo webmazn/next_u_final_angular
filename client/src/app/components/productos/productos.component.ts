@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductosService } from '../../services/productos.service';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-productos',
@@ -12,13 +13,13 @@ export class ProductosComponent implements OnInit {
   filterProducto: any = '';
   showModal: boolean = false;
   detalles: any = [{
-    imagen: 'aguacate.jps',
+    imagen: 'aguacate.jpg',
     nombre: 'aguacate',
     precio: 5,
     disponibles: 32
   }];
 
-  constructor(private productosService : ProductosService) { }
+  constructor(private productosService : ProductosService, private router: Router) { }
 
   ngOnInit() {
     this.productosService.getProductos().subscribe(
@@ -30,11 +31,9 @@ export class ProductosComponent implements OnInit {
     );
   }
 
-  onModalProducto(mostrar, producto){
-    this.showModal = mostrar;
-    this.detalles = producto;
-    //console.log(mostrar);
-    //console.log(producto);
+  verProducto(id: string){
+    //console.log(id);
+    this.router.navigate(['/producto/ver/', id]);
   }
 
 }

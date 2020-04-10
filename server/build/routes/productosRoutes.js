@@ -12,6 +12,7 @@ class ProductosRoutes {
     }
     config() {
         this.router.get('/productos', productosController_1.default.listarProductos);
+        this.router.get('/producto/:id', productosController_1.default.traerUnProducto);
         /*this.router.get('/', productosController.list);
         this.router.get('/:id', productosController.getOne);
         this.router.post('/', productosController.create);

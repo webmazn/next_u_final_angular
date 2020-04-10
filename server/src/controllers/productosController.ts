@@ -36,7 +36,7 @@ class ProductosController {
   public async listarProductos(req: Request, res: Response): Promise<void> {
     /*const games = await pool.query('SELECT * FROM games');
     res.json(games);*/
-    const productos = await pool.query('SELECT id, nombre, precio, disponibles, imagen FROM nu_productos', [], (error, results, fields) => {
+    await pool.query('SELECT id, nombre, precio, disponibles, imagen FROM nu_productos', [], (error, results, fields) => {
       if (error) return res.status(500).send('Server error');
       //console.log(results);
       //console.log(results.length);
@@ -50,14 +50,20 @@ class ProductosController {
     });
   }
 
-  public async getOne(req: Request, res: Response): Promise<any> {
-    /*const { id } = req.params;
-    const games = await pool.query('SELECT * FROM games WHERE id = ?', [id]);
-    console.log(games.length);
-    if (games.length > 0) {
-        return res.json(games[0]);
-    }
-    res.status(404).json({ text: "The game doesn't exits" });*/
+  public async traerUnProducto(req: Request, res: Response): Promise<any> {
+    const { id } = req.params; // obtiene una parte de un objeto sería igual a req.params.id
+    const producto = await pool.query('SELECT * FROM nu_productos WHERE id = ?', [id], (error, results, fields) => {
+      if (error) return res.status(500).send('Server error');
+      //console.log(results);
+      //console.log(results.length);
+      //console.log(rows.clave);
+      if (results.length > 0) {
+        res.json(results[0]);
+      }else{
+        res.status(404).send({ message: 'No hay producto' });
+      }
+      //res.status(404).json({ text: "The game doesn't exits" });
+    });
   }
 
   public async createUser(req: Request, res: Response): Promise<void> {

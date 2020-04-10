@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
   registerForm: FormGroup;
   submitted = false;
   respuesta = '';
+  showMenu: boolean = false;
 
   /*login: Login = {
     email: '',
