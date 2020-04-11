@@ -1,6 +1,6 @@
 <div class="container-fluid bg-home">
 
-  <app-menu></app-menu>
+  <app-menu #menu></app-menu>
 
   <div class="container h-cuerpo">
     <div class="row py-3 h-cuerpo-top">
@@ -47,8 +47,8 @@
             <div class="row py-2">
               <div class="btn-group">
                 <button class="btn btn-primary btn-sm" (click)="verProducto(producto.id)">Ver Más</button>
-                <button class="btn btn-warning btn-sm">Añadir</button>
-                <input type="number" class="form-control form-control-sm cantidad" value="1">
+                <button class="btn btn-warning btn-sm" (click)="agregarCarrito(producto.id)">Añadir</button>
+                <input type="number" class="form-control form-control-sm rounded-right cantidad" (keyup)="cantidadProductos($event)" (change)="cantidadProductos($event)" value="1">
               </div>
             </div>
 
