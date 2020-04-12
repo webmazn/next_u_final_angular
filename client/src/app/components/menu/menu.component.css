@@ -6,3 +6,12 @@
 .h-menu .active{
   color: #007bff;
 }
+.cantidadCarrito{
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  bottom: 7px;
+  right: 0px;
+  font-size: 10px;
+  border: 1px solid #ffffff;
+}

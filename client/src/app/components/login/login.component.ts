@@ -36,11 +36,11 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin(form): void{
-    console.log(form.value);
+    //console.log(form.value);
     this.loginService.login(form.value)
       .subscribe(
         res => {
-          console.log(res);
+          //console.log(res);
           this.router.navigate(['/home']);
         },
         err => {
@@ -50,17 +50,17 @@ export class LoginComponent implements OnInit {
       )
   }
 
-    // convenience getter for easy access to form fields
-    get f() { return this.registerForm.controls; }
+  // convenience getter for easy access to form fields
+  get f() { return this.registerForm.controls; }
 
-    onSubmit(form) {
-        this.submitted = true;
-        // stop here if form is invalid
-        if (this.registerForm.invalid) {
-            return;
-        }
-        //alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value))
-        this.onLogin(form);
-    }
+  onSubmit(form) {
+      this.submitted = true;
+      // stop here if form is invalid
+      if (this.registerForm.invalid) {
+          return;
+      }
+      //alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value))
+      this.onLogin(form);
+  }
 
 }

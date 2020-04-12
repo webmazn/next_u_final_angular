@@ -15,6 +15,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { ProductosComponent } from './components/productos/productos.component';
 import { VermasComponent } from './components/vermas/vermas.component';
+import { CarritoComponent } from './components/carrito/carrito.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { VermasComponent } from './components/vermas/vermas.component';
     MenuComponent,
     ModalComponent,
     ProductosComponent,
-    VermasComponent
+    VermasComponent,
+    CarritoComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
 <div class="container-fluid bg-home">
 
-  <app-menu #menu></app-menu>
+  <app-menu></app-menu>
 
   <div class="container h-cuerpo">
     <div class="row py-3 h-cuerpo-top">
@@ -32,14 +32,14 @@
           <h3>{{producto.nombre}}</h3>
           <div class="col-12">
             <div class="row">
-              <div class="col-10 p-0"><small class="font-weight-bold">Precio:</small> </div>
-              <div class="col-2 p-0 "><small>$ {{producto.precio}}</small></div>
+              <div class="col-8 p-0"><small class="font-weight-bold">Precio de lista:</small> </div>
+              <div class="col-4 p-0 "><small>{{producto.precio | currency}}</small></div>
             </div>
           </div>
           <div class="col-12">
             <div class="row">
-              <div class="col-10 p-0"><small class="font-weight-bold">Unidades disponibles:</small> </div>
-              <div class="col-2 p-0"><small>{{producto.disponibles}}</small></div>
+              <div class="col-8 p-0"><small class="font-weight-bold">Stock disponible:</small> </div>
+              <div class="col-4 p-0"><small>{{producto.disponibles}}</small></div>
             </div>
           </div>
           <div class="col-12">
@@ -47,8 +47,8 @@
             <div class="row py-2">
               <div class="btn-group">
                 <button class="btn btn-primary btn-sm" (click)="verProducto(producto.id)">Ver Más</button>
-                <button class="btn btn-warning btn-sm" (click)="agregarCarrito(producto.id)">Añadir</button>
-                <input type="number" class="form-control form-control-sm rounded-right cantidad" (keyup)="cantidadProductos($event)" (change)="cantidadProductos($event)" value="1">
+                <button class="btn btn-warning btn-sm" (click)="agregarProducto(producto)">Añadir</button>
+                <input type="number" class="form-control form-control-sm rounded-right cantidad" (keyup)="cantidadProductos($event)" (change)="cantidadProductos($event)" min="1" max="10" value="1">
               </div>
             </div>
 

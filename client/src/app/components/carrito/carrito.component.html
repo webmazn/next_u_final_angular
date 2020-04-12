@@ -1,0 +1,58 @@
+<div class="container-fluid bg-home">
+
+  <app-menu></app-menu>
+
+  <div class="container h-cuerpo">
+    <div class="row py-3 h-cuerpo-top">
+      <div class="col-12">
+        <div class="h2">Carrito de compras</div>
+      </div>
+      <div class="col-12">
+        <div class="dropdown-divider"></div>
+      </div>
+    </div>
+
+    <div class="row py-3 h-cuerpo-bottom">
+      <div class="col-6">
+
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">Imagen</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Sub Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let detalle of detalles">
+                <td align="center">
+                  <img src="assets/{{detalle['producto'].imagen}}" height="50">
+                </td>
+                <td>{{detalle['producto'].nombre}}</td>
+                <td align="right">{{detalle['producto'].precio | currency}}</td>
+                <td align="center">{{detalle['cantidad']}}</td>
+                <td align="right">{{detalle['subtotal'] | currency}}</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="4" align="right">Total</td>
+                <td align="right">{{total | currency}}</td>
+              </tr>
+            </tfoot>
+          </table>
+
+      </div>
+      <div class="col-6">
+        <h4>Total: <span>{{total | currency}}</span></h4>
+        <div class="btn-group">
+          <a routerLink="/home" class="btn btn-primary btn-sm" >Cancelar</a>
+          <button class="btn btn-warning btn-sm" (click)="pagarCarrito()">Pagar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
