@@ -13,10 +13,10 @@ class ProductosRoutes {
     config() {
         this.router.get('/productos', productosController_1.default.listarProductos);
         this.router.get('/producto/:id', productosController_1.default.traerUnProducto);
+        this.router.put('/producto/:id/:disponible', productosController_1.default.actualizarDisponibles);
         /*this.router.get('/', productosController.list);
         this.router.get('/:id', productosController.getOne);
         this.router.post('/', productosController.create);
-        this.router.put('/:id', productosController.update);
         this.router.delete('/:id', productosController.delete);*/
     }
 }

@@ -24,13 +24,10 @@ class ProductosController {
   }
 
   public async actualizarDisponibles(req: Request, res: Response): Promise<any> {
-    /*const { id } = req.params;
-    const games = await pool.query('SELECT * FROM games WHERE id = ?', [id]);
-    console.log(games.length);
-    if (games.length > 0) {
-        return res.json(games[0]);
-    }
-    res.status(404).json({ text: "The game doesn't exits" });*/
+    const { id } = req.params;
+    const { disponible } = req.params;
+    await pool.query('UPDATE nu_productos set disponibles = ? WHERE id = ?', [disponible, id]);
+    res.json({ message: "The game was Updated" });
   }
 
   public async listarProductos(req: Request, res: Response): Promise<void> {

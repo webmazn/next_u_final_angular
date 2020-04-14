@@ -12,7 +12,6 @@
           <div class="form-group">
             <label for="exampleInputEmail1" class="h5">¿Qué estas buscando?</label>
             <input type="text" class="form-control" name="filterProducto" placeholder="Buscar producto" [(ngModel)]="filterProducto">
-            <!--small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small-->
           </div>
         </form>
       </div>
@@ -47,8 +46,8 @@
             <div class="row py-2">
               <div class="btn-group">
                 <button class="btn btn-primary btn-sm" (click)="verProducto(producto.id)">Ver Más</button>
-                <button class="btn btn-warning btn-sm" (click)="agregarProducto(producto)">Añadir</button>
-                <input type="number" class="form-control form-control-sm rounded-right cantidad" (keyup)="cantidadProductos($event)" (change)="cantidadProductos($event)" min="1" max="10" value="1">
+                <button class="btn btn-warning btn-sm" (click)="agregarProducto($event, producto)">Añadir</button>
+                <input type="number" class="form-control form-control-sm rounded-right cantidad" min="1" max="20" value="1">
               </div>
             </div>
 
