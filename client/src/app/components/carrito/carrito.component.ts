@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CarritoService } from '../../services/carrito.service'
 import { Router } from '@angular/router';
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-carrito',
@@ -12,9 +13,12 @@ export class CarritoComponent implements OnInit {
   detalles: any = [];
   total: number = 0;
 
-  constructor(private carritoService: CarritoService, private router: Router) { }
+  constructor(private carritoService: CarritoService, private loginService: LoginService, private router: Router) { }
 
   ngOnInit() {
+    if(this.loginService.getToken() == null){
+      this.router.navigate(['/login']);
+    }
 
     const local = localStorage.getItem('carritoProductos');
     if(local == undefined){

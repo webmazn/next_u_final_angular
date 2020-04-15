@@ -9,7 +9,6 @@ height: 100vh;
 align-content: center;
 }
 
-
 .h-cuerpo{
   height: calc(100vh - 40px);
   padding-top: 20px;
@@ -33,35 +32,4 @@ align-content: center;
   width: 100%;*/
   height: calc(100% - 135px);
   overflow: auto;
-}
-
-.productos{
-  margin: 10px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-shadow: 0 0.5rem 1rem rgba(0,0,0,.05), inset 0 -1px 0 rgba(0,0,0,.1);
-}
-
-.h-cuerpo-bottom button{
-  padding: 0px 12px;
-}
-
-.mh-105{
-  max-height: 105px;
-  margin: 0 auto;
-}
-
-.imagen-catalogo{
-  /*background-image: attr(data-img);
-  background-repeat: no-repeat;
-  background-size: cover;*/
-  text-align: center;
-  overflow: hidden;
-  height: 120px;
-  width: 100%;
-}
-.imagen-catalogo img{
-  height: 100%;
-  width: auto;
 }

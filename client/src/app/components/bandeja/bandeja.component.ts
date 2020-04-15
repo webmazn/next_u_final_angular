@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from '../../services/login.service';
 import { Router } from '@angular/router';
+import { LoginService } from '../../services/login.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-bandeja',
+  templateUrl: './bandeja.component.html',
+  styleUrls: ['./bandeja.component.css']
 })
-export class HomeComponent implements OnInit {
+export class BandejaComponent implements OnInit {
 
   constructor(private loginService: LoginService, private router: Router) { }
 

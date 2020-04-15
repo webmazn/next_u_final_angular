@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MenuService } from '../../services/menu.service';
+import { LoginService} from '../../services/login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -10,7 +12,7 @@ export class MenuComponent implements OnInit {
 
   carrito: any = [];
 
-  constructor(private menuService: MenuService) { }
+  constructor(private menuService: MenuService, private loginService: LoginService, private router: Router) { }
 
   ngOnInit() {
     const local = localStorage.getItem('carritoProductos');
@@ -21,6 +23,11 @@ export class MenuComponent implements OnInit {
       const cantidad = storage.length;
       this.carrito = this.menuService.actualizarCarrito(true, cantidad);
     }
+  }
+
+  logout(){
+    this.loginService.logout();
+    this.router.navigate(['/login']);
   }
 
 }

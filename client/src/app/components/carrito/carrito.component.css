@@ -51,6 +51,9 @@ align-content: center;
   margin: 0 auto;
 }
 /***table***/
+.table tr{
+  border-bottom: 3px solid #c1c1c1;
+}
 .tabla th {
   display: none;
   padding: 10px;
@@ -65,7 +68,7 @@ align-content: center;
 .tabla td {
   display: block;
   padding: 10px 10px 5px 10px;
-  text-align: right;
+  /*text-align: right;*/
   vertical-align: middle;
   background: white;
 }
@@ -81,13 +84,17 @@ align-content: center;
 @media only screen and (min-width: 830px){
   .tabla th {
     display: table-cell;
+    background: #c1c1c1;
   }
   .table tr{
-    border-bottom: 3px solid #000000;
+    border-bottom: initial;
   }
   .tabla td {
       display: table-cell;
-      text-align: center;
+      /*text-align: center;*/
       padding: 10px;
+  }
+  .tabla td:before {
+    display: none;
   }
 }

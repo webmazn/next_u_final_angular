@@ -1,3 +1,6 @@
+.cursor-pointer{
+  cursor: pointer;
+}
 .h-menu {
   height: 40px;
   background-color: #f8f9fa;

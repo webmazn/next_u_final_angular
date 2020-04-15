@@ -3,36 +3,7 @@ import pool from '../database';
 
 class ProductosController {
 
-  public async mostrarProductos(req: Request, res: Response): Promise<any> {
-    /*const { id } = req.params;
-    const games = await pool.query('SELECT * FROM games WHERE id = ?', [id]);
-    console.log(games.length);
-    if (games.length > 0) {
-        return res.json(games[0]);
-    }
-    res.status(404).json({ text: "The game doesn't exits" });*/
-  }
-
-  public async buscarProducto(req: Request, res: Response): Promise<any> {
-    /*const { id } = req.params;
-    const games = await pool.query('SELECT * FROM games WHERE id = ?', [id]);
-    console.log(games.length);
-    if (games.length > 0) {
-        return res.json(games[0]);
-    }
-    res.status(404).json({ text: "The game doesn't exits" });*/
-  }
-
-  public async actualizarDisponibles(req: Request, res: Response): Promise<any> {
-    const { id } = req.params;
-    const { disponible } = req.params;
-    await pool.query('UPDATE nu_productos set disponibles = ? WHERE id = ?', [disponible, id]);
-    res.json({ message: "The game was Updated" });
-  }
-
   public async listarProductos(req: Request, res: Response): Promise<void> {
-    /*const games = await pool.query('SELECT * FROM games');
-    res.json(games);*/
     await pool.query('SELECT id, nombre, precio, disponibles, imagen FROM nu_productos', [], (error, results, fields) => {
       if (error) return res.status(500).send('Server error');
       //console.log(results);
@@ -61,6 +32,33 @@ class ProductosController {
       }
       //res.status(404).json({ text: "The game doesn't exits" });
     });
+  }
+
+  public async actualizarDisponibles(req: Request, res: Response): Promise<any> {
+    const { id } = req.params;
+    const { disponible } = req.params;
+    await pool.query('UPDATE nu_productos set disponibles = ? WHERE id = ?', [disponible, id]);
+    res.json({ message: "The game was Updated" });
+  }
+
+  public async mostrarProductos(req: Request, res: Response): Promise<any> {
+    /*const { id } = req.params;
+    const games = await pool.query('SELECT * FROM games WHERE id = ?', [id]);
+    console.log(games.length);
+    if (games.length > 0) {
+        return res.json(games[0]);
+    }
+    res.status(404).json({ text: "The game doesn't exits" });*/
+  }
+
+  public async buscarProducto(req: Request, res: Response): Promise<any> {
+    /*const { id } = req.params;
+    const games = await pool.query('SELECT * FROM games WHERE id = ?', [id]);
+    console.log(games.length);
+    if (games.length > 0) {
+        return res.json(games[0]);
+    }
+    res.status(404).json({ text: "The game doesn't exits" });*/
   }
 
   public async createUser(req: Request, res: Response): Promise<void> {

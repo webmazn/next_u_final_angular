@@ -16,6 +16,7 @@ import { ModalComponent } from './components/modal/modal.component';
 import { ProductosComponent } from './components/productos/productos.component';
 import { VermasComponent } from './components/vermas/vermas.component';
 import { CarritoComponent } from './components/carrito/carrito.component';
+import { BandejaComponent } from './components/bandeja/bandeja.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { CarritoComponent } from './components/carrito/carrito.component';
     ModalComponent,
     ProductosComponent,
     VermasComponent,
-    CarritoComponent
+    CarritoComponent,
+    BandejaComponent
   ],
   imports: [
     BrowserModule,

@@ -29,7 +29,7 @@ export class ProductosComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(){
-    console.log('destruyendo');
+    //console.log('destruyendo');
     this.productosSuscritos.unsubscribe();
   }
 
