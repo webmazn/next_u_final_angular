@@ -58,7 +58,7 @@ class ProductosController {
                     res.json(results);
                 }
                 else {
-                    res.status(409).send({ message: 'No hay productos' });
+                    res.status(409).send({ message: 'No hay producto' });
                 }
                 //res.status(404).json({ text: "The game doesn't exits" });
             });
@@ -74,7 +74,7 @@ class ProductosController {
                 //console.log(results.length);
                 //console.log(rows.clave);
                 if (results.length > 0) {
-                    res.json(results[0]);
+                    return res.json(results[0]);
                 }
                 else {
                     res.status(404).send({ message: 'No hay producto' });

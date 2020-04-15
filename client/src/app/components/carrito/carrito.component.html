@@ -13,9 +13,9 @@
     </div>
 
     <div class="row py-3 h-cuerpo-bottom">
-      <div class="col-6">
-
-          <table class="table table-bordered">
+      <div class="col-lg-6 col-md-12 text-md-right">
+        <div class="table-respinsive">
+          <table class="table table-bordered tabla">
             <thead>
               <tr>
                 <th scope="col">Imagen</th>
@@ -27,13 +27,13 @@
             </thead>
             <tbody>
               <tr *ngFor="let detalle of detalles">
-                <td align="center">
+                <td data-encabezado="Imagen" align="center">
                   <img src="assets/{{detalle['producto'].imagen}}" height="50">
                 </td>
-                <td>{{detalle['producto'].nombre}}</td>
-                <td align="right">{{detalle['producto'].precio | currency}}</td>
-                <td align="center">{{detalle['cantidad']}}</td>
-                <td align="right">{{detalle['subtotal'] | currency}}</td>
+                <td data-encabezado="Nombre" align="left">{{detalle['producto'].nombre}}</td>
+                <td data-encabezado="Precio" align="right">{{detalle['producto'].precio | currency}}</td>
+                <td data-encabezado="Cantidad" align="center">{{detalle['cantidad']}}</td>
+                <td data-encabezado="Sub Total" align="right">{{detalle['subtotal'] | currency}}</td>
               </tr>
             </tbody>
             <tfoot>
@@ -43,9 +43,9 @@
               </tr>
             </tfoot>
           </table>
-
+        </div>
       </div>
-      <div class="col-6">
+      <div class="col-lg-6 col-md-12 text-right text-lg-left">
         <h4>Total: <span>{{total | currency}}</span></h4>
         <div class="btn-group">
           <a routerLink="/home" class="btn btn-primary btn-sm" >Cancelar</a>

@@ -1,29 +1,36 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ProductosService } from '../../services/productos.service';
 import { Router } from '@angular/router';
 import { MenuService } from '../../services/menu.service'
-import { Observable } from 'rxjs';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-productos',
   templateUrl: './productos.component.html',
   styleUrls: ['./productos.component.css']
 })
-export class ProductosComponent implements OnInit {
+export class ProductosComponent implements OnInit, OnDestroy {
 
   productos: any = [];
   filterProducto: any = '';
   carrito: any = [];
+  productosSuscritos: Subscription;
 
   constructor( private productosService: ProductosService, private router: Router, private menuService: MenuService) { }
 
   ngOnInit() {
-    this.productosService.getProductos().subscribe(
+
+    this.productosSuscritos = this.productosService.getProductos().subscribe(
       res => {
         this.productos = res;
       },
       err => console.error(err)
     );
+  }
+
+  ngOnDestroy(){
+    console.log('destruyendo');
+    this.productosSuscritos.unsubscribe();
   }
 
   verProducto(id: string){

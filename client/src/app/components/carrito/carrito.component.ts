@@ -55,15 +55,17 @@ export class CarritoComponent implements OnInit {
           res => {
             //this.productos = res;
             console.log(res);
+            /*if( acum == total){
+              console.log('termino todo...');
+              localStorage.removeItem('carritoProductos');
+              this.router.navigate(['/home']);
+            }*/
           },
           err => console.error(err)
         );
-        if( acum == total){
-          console.log('termino todo...');
-          localStorage.removeItem('carritoProductos');
-          this.router.navigate(['/home']);
-        }
       }
+      localStorage.removeItem('carritoProductos');
+      this.router.navigate(['/home']);
     }
   }
 
