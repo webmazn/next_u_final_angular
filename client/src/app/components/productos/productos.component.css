@@ -58,10 +58,17 @@ align-content: center;
   background-size: cover;*/
   text-align: center;
   overflow: hidden;
-  height: 120px;
+  height: 150px;
   width: 100%;
 }
 .imagen-catalogo img{
+  /*height: 100%;
+  width: auto;*/
+  width: 100%;
   height: 100%;
-  width: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
